@@ -17,6 +17,9 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
+// set what we are listening on
+app.set('port', process.env.PORT || 3000);
+
 // routes
 app.get('/', function (req, res) {
   res.send('Hello, World!');
