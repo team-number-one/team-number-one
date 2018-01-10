@@ -3,12 +3,25 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import NavBar from './components/NavBar.jsx';
 import { BrowserRouter, Switch, Route, withRouter } from 'react-router-dom';
+import Feed from './components/feed.jsx';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {inputValue: ''};
+    this.state = {
+      inputValue: '',
+      squeaks: [{
+        username: 'Henry Chesnutt',
+        displayName: '@hesnutt',
+        text: 'IM A PIRANNA'
+      },
+      {
+        username: 'Feli Cananga',
+        displayName: 'SPECTRE',
+        text: 'You are all going to die.'
+      }]
+    };
   }
 
   searchHandler() {
