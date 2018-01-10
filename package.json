@@ -10,7 +10,7 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "dev:react": "webpack -d --watch",
-    "postinstall": "webpack -p"
+    "postinstall": "webpack -p",
     "test": "mocha server/spec/server-spec.js;"
   },
   "dependencies": {
@@ -33,7 +33,7 @@
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-preset-react": "^6.23.0",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
     "request": "^2.83.0",
     "underscore": "^1.8.3"
   },
