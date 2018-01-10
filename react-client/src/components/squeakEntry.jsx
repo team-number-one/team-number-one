@@ -15,4 +15,5 @@ const SqueakEntry = ({squeak}) => (
   </div>
 );
 
+
 export default SqueakEntry;
