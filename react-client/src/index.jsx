@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import NavBar from './components/NavBar.jsx';
+import Post from './components/Post.jsx';
 import { BrowserRouter, Switch, Route, withRouter } from 'react-router-dom';
 
 

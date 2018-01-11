@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SqueakEntry = ({squeak}) => (
-  <div class="squeak-entry">
+  <div className="squeak-entry">
     <div>
       <span>{squeak.username}</span>
     </div>
