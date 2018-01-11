@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Post = () => (
-  <div class="post">
+  <div className="post">
     <form>
       <label>
         Post a Squeak:
