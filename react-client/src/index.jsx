@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import NavBar from './components/NavBar.jsx';
+import HomePage from './components/HomePage.jsx';
 import { BrowserRouter, Switch, Route, withRouter } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-bootstrap';
 
@@ -41,7 +42,7 @@ class App extends React.Component {
           <Route exact path="/" render={props => (homePageGrid)}/>
           <Route path="/search" render={props => (<span>Search Results Page for {props.location.search.slice(3) /* getting rid of '?q=' that why I start from three */}</span>)}/>
           <Route path="/login" render={props => (<span>Login Page</span>)}/>
-          <Route path="/:username" render={props => (<span>{props.match.params.username}'s Profile Page</span>)}/>
+          <Route path="/:username" render={props => (<HomePage/>)}/>
         </Switch>
       </div>
     );
