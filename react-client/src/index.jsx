@@ -7,6 +7,7 @@ import HomePage from './containers/HomePage.jsx';
 import LoginPage from './containers/LoginPage.jsx';
 import $ from 'jquery';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
