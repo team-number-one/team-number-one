@@ -62,15 +62,13 @@ class App extends React.Component {
           searchHandler={this.searchHandler.bind(this)}
           onChangeHandler={this.onInputChangeHandler.bind(this)}/>
         <Switch>
-          <Route exact path="/" render={props => (<HomePage/>)}/>
-          {/* <Route exact path="/" render={props => (
+          <Route exact path="/" render={props => (
             this.state.loggedIn ? (
-              <Redirect to="/login"/>
-            ) : (
               <HomePage/>
+            ) : (
+              <Redirect to="/login"/>
             )
-          )}/> */}
-          <Redirect from="/find" to="/search"/>
+          )}/>
           <Route path="/search" render={props => (<SearchPage {...props.location}/>)}/>
           <Route path="/login" render={props => (<LoginPage/>)}/>
           <Route path="/:username" render={props => (<HomePage username={props.match.params.username}/>)}/>
@@ -83,9 +81,9 @@ class App extends React.Component {
 
 App = withRouter(App);
 
-// ReactDOM.render(
-//   <BrowserRouter>
-//     <App />
-//   </BrowserRouter>, document.getElementById('app')
-// );
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>, document.getElementById('app')
+);
 
