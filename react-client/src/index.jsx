@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route, withRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import NavBar from './components/NavBar.jsx';
 import SearchPage from './containers/SearchPage.jsx';
 import HomePage from './containers/HomePage.jsx';
@@ -26,6 +26,11 @@ class App extends React.Component {
         text: 'coding is cool I guess'
       }]
     };
+  }
+
+
+  loggedIn() {
+    return this.state.loggedIn;
   }
 
   searchHandler() {
@@ -62,7 +67,14 @@ class App extends React.Component {
           searchHandler={this.searchHandler.bind(this)}
           onChangeHandler={this.onInputChangeHandler.bind(this)}/>
         <Switch>
-          <Route exact path="/" render={props => (<HomePage/>)}/>
+          {/* <Route exact path="/" render={props => (<HomePage/>)}/> */}
+          <Route exact path="/" render={props => (
+            this.state.loggedIn ? (
+              <Redirect to="/login"/>
+            ) : (
+              <HomePage/>
+            )
+          )}/>
           <Route path="/search" render={props => (<SearchPage {...props.location}/>)}/>
           <Route path="/login" render={props => (<LoginPage/>)}/>
           <Route path="/:username" render={props => (<HomePage username={props.match.params.username}/>)}/>
@@ -72,6 +84,7 @@ class App extends React.Component {
   }
 }
 
+
 App = withRouter(App);
 
 ReactDOM.render(
@@ -80,4 +93,3 @@ ReactDOM.render(
   </BrowserRouter>, document.getElementById('app')
 );
 
-// test

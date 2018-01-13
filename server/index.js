@@ -28,6 +28,7 @@ app.get('/api/userinfo/:id', (req, res) => {
 
 app.get('/api/search', (req, res) => {
   // TODO: nice to have also search for squeaks or tags or whatever other entity
+  console.log(req);
   db.searchUsers(req.query.q, (err, results) => {
     if (err) {
       res.status(500).send(err);
@@ -45,6 +46,17 @@ app.post('/api/writepost', (req, res) => {
     res.status(200).send();
   });
 });
+
+
+app.post('/sign-in', (req, res) => {
+  console.log(req)
+  res.end();
+})
+
+app.post('/sign-up', (req, res) => {
+  console.log(req);
+  res.end();
+})
 
 app.get('*', function response(req, res) {
   res.sendFile(path.join(__dirname, '..', 'react-client', 'dist', 'index.html'));
