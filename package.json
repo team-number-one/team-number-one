@@ -40,7 +40,7 @@
     "request": "^2.83.0",
     "sinon": "^4.1.4",
     "supertest": "^3.0.0",
-    "underscore": "^1.8.3",
+    "underscore": "^1.12.1",
     "webpack": "^2.2.1"
   },
   "devDependencies": {
